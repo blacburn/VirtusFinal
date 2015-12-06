@@ -5,13 +5,18 @@ include '../daos/dao.php';
 session_start();
 if ($_GET) {
     try {
-        $_SESSION['db_user'] = $_GET['db_user'];
-        $_SESSION['db_pass'] = $_GET['db_pass'];
+//        $_SESSION['db_user'] = $_GET['db_user'];
+//        $_SESSION['db_pass'] = $_GET['db_pass'];
+//        
+        $_SESSION['db_user'] = 'postgres';
+        $_SESSION['db_pass'] = 'system';
+        
+        
         $dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
         $dao->conectar();
-        $dao->cerrarConexion();
+//        $dao->cerrarConexion();
         if ($dao->link != false) {
-            header('Location: ../home.php');
+            header('Location: ../form_datos.php');
         } else {
             echo '<script>window.alert("Usuario o clave invalida");</script>';
             //header('Location: ../index.php');		
@@ -23,6 +28,6 @@ if ($_GET) {
 
     $_SESSION['db_user'] = DB_USER_CONS;
     $_SESSION['db_pass'] = DB_PASSWORD_CONS;
-    header('Location: ../home.php');
+    header('Location: ../form_datos.php');
 }
 ?>

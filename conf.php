@@ -10,7 +10,7 @@ define('DB_HOST','localhost');
 /**
 *nombre de la base de datos
 */
-define('DB_NAME','db_avitours');
+define('DB_NAME','virtus');
 /**
 *id operador por defecto
 */
@@ -22,20 +22,20 @@ define('MAIL_ADDRESS','prueba@avitour.com.co');
 /**
 *direccion de correo
 */
-define('DB_USER_CREATOR','u_avitour_creador_cliente');
+define('DB_USER_CREATOR','admin');
 /**
 *direccion de correo
 */
-define('DB_PASSWORD_CREATOR','u_avitour_creador_cliente');
+define('DB_PASSWORD_CREATOR','1234');
 
 
-define('DB_USER_CONS','u_avitour_consulta');
+define('DB_USER_CONS','admin');
 /**
 *direccion de correo
 */
-define('DB_PASSWORD_CONS','u_avitour_consulta');
+define('DB_PASSWORD_CONS','1234');
 
-include './model/Pasajero.php';
+//include './model/Pasajero.php';
 
 /**
 *validacion por ip

@@ -11,7 +11,7 @@ define('DB_HOST','localhost');
 /**
 *nombre de la base de datos
 */
-define('DB_NAME','db_avitours');
+define('DB_NAME','virtus');
 /**
 *id operador por defecto
 */

@@ -23,10 +23,10 @@ class daoUsuario {
             return $res;
     }
 	
-	function insertInfoUsuario($user, $nombre1, $nombre2, $apellido1, $apellido2, $v_telefono){
-		$tabla = "avitour.usuario";
-		$campos = array("k_usuario","n_nombre_1","n_nombre_2","n_apellido_1","n_apellido_2","v_telefono");
-		$valores = array("'".$user."'","'".$nombre1."'", "'".$nombre2."'", "'".$apellido1."'", "'".$apellido2."'", "'".$v_telefono."'");
+	function insertInfoUsuario($cedula, $nombre, $apellido, $usuario, $clave, $telefono, $correo ){
+		$tabla = "usuario";
+		$campos = array("id_usuario","nombre_usuario","apellido_usuario","nombre_login","contrasena","telefono", "email");
+		$valores = array("$cedula","'".$nombre."'", "'".$apellido."'", "'".$usuario."'", "'".$clave."'", "'".$telefono."'", "'".$correo."'");
 		return $this->database->insertarRegistro($tabla, $campos, $valores);
 	}
 	

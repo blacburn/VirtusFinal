@@ -7,11 +7,21 @@ session_start();
     $dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
     $dao->conectar();
     $daoUsuario = new daoUsuario($dao);
-    $daoUsuario->crearUsuario($_GET['email'],$_GET['pass']);
-
-    $daoUsuario->insertInfoUsuario($_GET['email'],$_GET['nombre1'],$_GET['nombre2'],$_GET['apellido1'],$_GET['apellido2'],$_GET['phone']);
+//    $daoUsuario->crearUsuario('admin',$_GET['1234']);
+    
+    
+    if($_GET['password']==$_GET['passwordc']){
+        
+    $daoUsuario->insertInfoUsuario($_GET['cedula'],$_GET['nombre'],$_GET['apellido'],$_GET['usuario'],$_GET['password'],$_GET['telefono'],$_GET['email']);    
+        
+    }
+    else{
+        echo '<script>window.alert("Las contrasenas no coinciden");</script>';
+    }
+    
     $dao->cerrarConexion();
 
-    $_SESSION['db_user'] = $_GET['email'];
-    $_SESSION['db_pass'] = $_GET['pass'];
-    header('Location: ../home.php');
+//    $_SESSION['db_user'] = $_GET['email'];
+//    $_SESSION['db_pass'] = $_GET['pass'];
+  
+    header('Location: ../iniciosesion.php');

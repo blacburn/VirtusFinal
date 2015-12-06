@@ -4,16 +4,16 @@
     </head>
     <body>
         <?php
-        include('templates/header.php');
+        include('templates/headerTemplate.php');
        
         ?>
        
-              
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">              
  <div class="container">
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h1 class="section-heading">BIENVENIDO</h1>
-                        <h3 class="section-subheading text-muted">Cuenta con nosotros, Mejora tu salud con nosotros.</h3>
+                        <h3 class="section-subheading text-muted">Es un gusto hacer parte de tu salud.</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -26,17 +26,27 @@
                     <div class="panel-heading"><h2></h2></div>
                     <div class="panel panel-warning">
                         <div class="panel-body">  
-                           <h5>Registrate</h5><br>
+                           <h5>Completa estos datos:</h5><br>
                             <div class="col-sm-12">
-                                 
-                                <input type="text" class="form-control" name="cedula" required="" placeholder="Cedula *"/><br>
-                                <input type="text" class="form-control" name="nombre" required="" placeholder="Nombre *"/><br>
-                                <input type="text" class="form-control" name="apellido" required="" placeholder="Apellido*"/><br>
-                                <input type="text" class="form-control" name="usuario" required="" placeholder="Usuario *"/><br>
-                                <input type="password" class="form-control" name="password" required="" placeholder="Contrase&ntilde;a *"/><br>
-                                <input type="password" class="form-control" name="passwordc" required="" placeholder="Confirma Contrase&ntilde;a *"/><br>
-                                <input type="text" class="form-control" name="telefono" required="" placeholder="Telefono *"/><br>
-                                <input type="email" class="form-control" name="email" required="" placeholder="Email *"/>
+                                
+                                <label for="subject">Sexo :</label>
+                                <select name="sexo" id="sexo">
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                                </select><br><br>
+                                
+                                <input type="text" class="form-control" name="edad" required="" placeholder="Edad en a&ntilde;os. "/><br>
+                               
+                                <input type="text" class="form-control" name="altura" required="" placeholder="Altura en metros. Ejm:  1.75 "/><br>
+                                
+                                <input type="text" class="form-control" name="peso" required="" placeholder="Peso en kilogramos. Ejm:  70.2 "/><br>
+                                
+                                <label for="subject">Frecuencia de actividad fisica:</label>
+                                <select name="frecuencia" id="frecuencia">
+                                <option value="baja">Baja </option>
+                                <option value="media">Media</option>
+                                <option value="alta">Alta</option>
+                                </select><br><br>
                                 
                                 
 
@@ -49,7 +59,7 @@
                                 <div class="clearfix"></div>
                                 <div class="col-lg-12 text-center">
                                     <div id="success"></div>
-                                    <button type="submit" class="btn btn-xl">Registrar</button>
+                                    <button type="submit" class="btn btn-xl">Guardar</button>
 <div class="col-lg-12">
                                         <h2>  </h2><br>
                                         <h2>  </h2><br>
@@ -57,9 +67,8 @@
                                         </div>
                                 </div>
                             </div>
-                        
+                        </form>
                     </div>
-                            </form>
                 </div>
             </div>
                
