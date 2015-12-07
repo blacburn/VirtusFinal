@@ -18,7 +18,7 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <form name="sentMessageddd" action="controller/user_controller.php">
+                        <form name="sentMessageddd" action="controller/formDatos_controller.php">
                             <div class="row">
                               
                                 

@@ -67,9 +67,7 @@
     </body>
 
 
-    <script>
-        $('.selectpicker').selectpicker();
-    </script>
+    
     <?php
  
      
