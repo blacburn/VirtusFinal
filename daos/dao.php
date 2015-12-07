@@ -56,6 +56,22 @@ Class dao {
         $result = pg_query($this->link, $sql);
         return $result;
     }
+    
+    function buscarDato($sql) {
+        //echo ("<br>sql:".$sql);
+        $result = pg_query($this->link, $sql);
+         $devolver = null;
+        if( $result )
+        {
+            // Si se encontró el registro, se obtiene un objeto en PHP con los datos de los campos:
+            if (pg_num_rows($result) > 0) {
+                $devolver = pg_fetch_object($result, 0);
+            }
+        }
+       
+        return $devolver;
+      
+    }
 
     function transformarResultado($result) {
         $res = array();

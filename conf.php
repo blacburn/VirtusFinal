@@ -35,7 +35,7 @@ define('DB_USER_CONS','admin');
 */
 define('DB_PASSWORD_CONS','1234');
 
-//include './model/Pasajero.php';
+//include './model/Usuario.php';
 
 /**
 *validacion por ip

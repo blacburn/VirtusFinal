@@ -7,12 +7,13 @@
  */
 class daoUsuario {
     var $database;
-
+    var $nombre;
     /**
      * constructor de la clase
      */
-    function daoUsuario($db) {
+    function daoUsuario($db,$nombre) {
         $this->database = $db;
+        $this->nombre = $nombre;
     }
 
     function crearUsuario($user, $pass){
@@ -43,6 +44,14 @@ class daoUsuario {
               
 	}
         
+        
+        function buscarInfoUsuario($usuario, $clave){
+		$sql = "SELECT nombre_usuario as nombre, apellido_usuario as apellido FROM usuario WHERE nombre_login='".$usuario."' AND contrasena='".$clave."'";
+                echo $sql;
+                $res = $this->database->buscarDato($sql);
+                
+            return   $res;
+	}
 	
     
     function validar($usuario) {
@@ -55,4 +64,10 @@ class daoUsuario {
             $res = $this->database->ejecutarConsulta($sql);
             return $this->database->transformarResultado($res);
     }
+    
+    function getNombre() {
+        return $this->nombre;
+    }
+
+
 }
