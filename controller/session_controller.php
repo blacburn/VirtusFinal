@@ -12,7 +12,7 @@ if ($_GET) {
         $_SESSION['db_pass'] = 'system';
         
         
-        $dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
+        $dao = new dao(DB_HOST, $_GET['db_user'],  $_GET['db_pass'], DB_NAME);
         $dao->conectar();
 //        $dao->cerrarConexion();
         if ($dao->link != false) {

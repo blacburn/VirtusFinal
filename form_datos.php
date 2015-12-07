@@ -1,6 +1,6 @@
 <html>
     <head>
-        <?php include './templates/importCss.php'; ?>
+        <?php include './templates/importCss_1.php'; ?>
     </head>
     <body>
         <?php
@@ -30,7 +30,7 @@
                             <div class="col-sm-12">
                                 
                                 <label for="subject">Sexo :</label>
-                                <select name="sexo" id="sexo">
+                                <select class="form-control" name="sexo" id="sexo">
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                                 </select><br><br>
@@ -42,7 +42,8 @@
                                 <input type="text" class="form-control" name="peso" required="" placeholder="Peso en kilogramos. Ejm:  70.2 "/><br>
                                 
                                 <label for="subject">Frecuencia de actividad fisica:</label>
-                                <select name="frecuencia" id="frecuencia">
+                                
+                                <select class="form-control" name="frecuencia" id="frecuencia">
                                 <option value="baja">Baja </option>
                                 <option value="media">Media</option>
                                 <option value="alta">Alta</option>
