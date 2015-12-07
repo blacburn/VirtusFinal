@@ -31,7 +31,7 @@ if ($_GET) {
            
            else {
                
-               header('Location: ../gestion_rutinas.php');
+               header('Location: ../menu.php');
                
                
            }

@@ -2,7 +2,7 @@
 <html>
     <head>
         <?php
-        include './templates/importCss.php';
+        include ('./templates/importCss_1.php');
         include('templates/headerAdmin.php');
 //        include ('controller/vuelo_controller.php');
 //        include('templates/tabla.php');

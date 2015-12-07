@@ -30,7 +30,6 @@ class daoUsuario {
 		$valores = array("$cedula","'".$nombre."'", "'".$apellido."'", "'".$usuario."'", "'".$clave."'", "'".$telefono."'", "'".$correo."'");
 		return $this->database->insertarRegistro($tabla, $campos, $valores);
 	}
-        
         function getIdUsuario($nombre) {
         $sql = "SELECT id_usuario FROM usuario where nombre_login like '" . $nombre . "'";
          echo $sql;
@@ -44,8 +43,6 @@ class daoUsuario {
                 echo $idUsuario[0][0];
                 $imc= $peso / ($altura*$altura);
                 $sql=" UPDATE usuario  SET edad=".$edad.", sexo='".$sexo."' ,altura='".$altura."', peso='".$peso."',imc='".$imc."', frec_actividad= '".$frecuencia."' WHERE id_usuario=".$idUsuario[0][0]."";
-               
-
                
                 return $this->database->ejecutarConsulta($sql);
               
@@ -61,8 +58,6 @@ class daoUsuario {
 	}
         
         
-	
-    
     function validar($usuario) {
         $sql = "SELECT contrasena FROM usuario where nombre_login like'" . $usuario . "'";
         $result = $this->database->ejecutarConsulta($sql);
@@ -80,6 +75,7 @@ class daoUsuario {
         $result = $this->database->ejecutarConsulta($sql);
         return $this->database->transformarResultado($result);
     }
+    
 
 
 }
