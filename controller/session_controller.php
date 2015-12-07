@@ -18,10 +18,25 @@ if ($_GET) {
 //        $dao->cerrarConexion();
        
         $result=$daoUsuario->buscarInfoUsuario($_GET['db_user'],$_GET['db_pass']);
-        
+        $result1=$daoUsuario-> getEstadoUsuario($_GET['db_user']);
                 
        if (!empty($result)) {
+           
+           
+           if (empty($result1[0][0])) {
+          
              header('Location: ../form_datos.php');
+             
+           }
+           
+           else {
+               
+               header('Location: ../gestion_rutinas.php');
+               
+               
+           }
+               
+               
         } else {
             echo '<script>window.alert("Usuario o clave invalida");</script>';
             header('Location: ../iniciosesion.php');		
