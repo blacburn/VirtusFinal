@@ -11,9 +11,9 @@ class daoUsuario {
     /**
      * constructor de la clase
      */
-    function daoUsuario($db,$nombre) {
+    function daoUsuario($db) {
         $this->database = $db;
-        $this->nombre = $nombre;
+        
     }
 
     function crearUsuario($user, $pass){
@@ -32,6 +32,7 @@ class daoUsuario {
 	}
         function getIdUsuario($nombre) {
         $sql = "SELECT id_usuario FROM usuario where nombre_usuario like'" . $nombre . "'";
+         echo $sql;
         $result = $this->database->ejecutarConsulta($sql);
         return $this->database->transformarResultado($result);
     }
@@ -39,15 +40,17 @@ class daoUsuario {
         function actualizarInfoUsuario2($nombre, $sexo, $edad, $altura, $peso, $frecuencia){
 		$tabla = "usuario";
                 $idUsuario=$this->getIdUsuario($nombre);
+                echo $idUsuario[0];
                 $sql=" UPDATE usuario  SET edad=".$edad.", sexo='".$sexo."' ,altura=.".$altura.", peso=".$peso.", frec_actividad= '".$frecuencia."' WHERE id_usuario=".$idUsuario[0][0]."";
-               return $this->database->ejecutarConsulta($sql);
+               
+                return $this->database->ejecutarConsulta($sql);
               
 	}
         
         
         function buscarInfoUsuario($usuario, $clave){
 		$sql = "SELECT nombre_usuario as nombre, apellido_usuario as apellido FROM usuario WHERE nombre_login='".$usuario."' AND contrasena='".$clave."'";
-                echo $sql;
+             
                 $res = $this->database->buscarDato($sql);
                 
             return   $res;
@@ -65,9 +68,7 @@ class daoUsuario {
             return $this->database->transformarResultado($res);
     }
     
-    function getNombre() {
-        return $this->nombre;
-    }
+   
 
 
 }
