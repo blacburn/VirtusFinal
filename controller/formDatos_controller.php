@@ -20,7 +20,7 @@ session_start();
     
     
     $dao->cerrarConexion();
-    header('Location: ../form_datos.php');
+    header('Location: ../menu.php');
 //    $_SESSION['db_user'] = $_GET['email'];
 //    $_SESSION['db_pass'] = $_GET['pass'];
   

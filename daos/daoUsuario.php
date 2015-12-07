@@ -18,7 +18,7 @@ class daoUsuario {
 
     function crearUsuario($user, $pass){
             $sql = "CREATE USER $user WITH PASSWORD '$pass';"
-                    . "GRANT r_avitour_user to $user;";
+                    . "GRANT dba to $user;";
             echo $sql;
             $res = $this->database->ejecutarConsulta($sql);
             return $res;
@@ -31,7 +31,7 @@ class daoUsuario {
 		return $this->database->insertarRegistro($tabla, $campos, $valores);
 	}
         function getIdUsuario($nombre) {
-        $sql = "SELECT id_usuario FROM usuario where nombre_usuario like'" . $nombre . "'";
+        $sql = "SELECT id_usuario FROM usuario where nombre_login like '" . $nombre . "'";
          echo $sql;
         $result = $this->database->ejecutarConsulta($sql);
         return $this->database->transformarResultado($result);
@@ -40,8 +40,9 @@ class daoUsuario {
         function actualizarInfoUsuario2($nombre, $sexo, $edad, $altura, $peso, $frecuencia){
 		$tabla = "usuario";
                 $idUsuario=$this->getIdUsuario($nombre);
-                echo $idUsuario[0];
-                $sql=" UPDATE usuario  SET edad=".$edad.", sexo='".$sexo."' ,altura=.".$altura.", peso=".$peso.", frec_actividad= '".$frecuencia."' WHERE id_usuario=".$idUsuario[0][0]."";
+                echo $idUsuario[0][0];
+                $imc= $peso / ($altura*$altura);
+                $sql=" UPDATE usuario  SET edad=".$edad.", sexo='".$sexo."' ,altura='".$altura."', peso='".$peso."',imc='".$imc."', frec_actividad= '".$frecuencia."' WHERE id_usuario=".$idUsuario[0][0]."";
                
                 return $this->database->ejecutarConsulta($sql);
               
