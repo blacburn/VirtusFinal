@@ -29,12 +29,30 @@ class daoRutina {
             return   $res;
 	}
         
+        function buscarRutinasTodo(){
+		$sql = "SELECT * FROM ejercicio";
+                $result = $this->database->ejecutarConsulta($sql);
+                $res = $this->database->transformarResultado($result);
+              
+                
+            return   $res;
+	}
+        
         function insertarRutinas($id_usuario, $id_serie,$id_ejercicio, $validacion , $progreso){
 		$sql = "INSERT INTO UsuarioxEjercicio VALUES (".$id_usuario.",".$id_serie.",".$id_ejercicio.", '".$validacion."', '".$progreso."')";
                 $result = $this->database->ejecutarConsulta($sql);
               
                 
             return   $result;
+	}
+        
+        function buscarRutinasxTipo($tipo){
+		$sql = "SELECT * FROM Tipo_ejercicio WHERE id_tipo_ejercicio=".$tipo."";
+                $result = $this->database->ejecutarConsulta($sql);
+                $res = $this->database->transformarResultado($result);
+              
+                
+            return   $res;
 	}
         
     
