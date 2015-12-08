@@ -45,6 +45,16 @@ class daoRutina {
                 
             return   $result;
 	}
+       
+         function buscarRutinasTodo(){
+		$sql = "SELECT * FROM ejercicio";
+                $result = $this->database->ejecutarConsulta($sql);
+                $res = $this->database->transformarResultado($result);
+              
+                
+            return   $res;
+	}
+        
         
         function buscarRutinasxTipo($tipo){
 		$sql = "SELECT * FROM Tipo_ejercicio WHERE id_tipo_ejercicio=".$tipo."";

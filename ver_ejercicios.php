@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <?php ?>
 <html>
     <head>
@@ -11,11 +5,7 @@ and open the template in the editor.
         include ('./templates/importCss_1.php');
         include('templates/headerAdmin.php');
         include ('./daos/daoRutina.php');
-        
-//        include ('controller/vuelo_controller.php');
-//        include('templates/tabla.php');
         ?>
-        
         <title>Ver ejercicios</title>
         
 <!--        <link rel="stylesheet" href="./css/jquery.dataTables.css" type="text/css"> -->
@@ -80,20 +70,19 @@ $(document).ready(function() {
     } );
 } );
     </script>
-    
     </head>
     <body>  
-        
-        <div>
-            <?php
-            require_once('./conf.php');
+        <div class="col-sm-10">
+           <?php
+        include './templates/importJS.php';
+        require_once('./conf.php');
         require_once('./daos/dao.php');
         $dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
         $dao->conectar();
-        $rutina = new daoRutina($dao);
-        
+        $rutina = new daoRutina($dao);  
         
         $arreglo=$rutina->buscarRutinasTodo();
+        
         TablaReporte($arreglo,$rutina);
         
         function TablaReporte($cArreglo,$rutina){
@@ -140,13 +129,12 @@ $(document).ready(function() {
             
         
         </div>
-        <?php 
- include './templates/importJS.php';
-?>
+        
+        ?>
+            
+        </div>
+
+
+        
     </body>
 </html>   
-
-
-<html>
-    <head>
-        
