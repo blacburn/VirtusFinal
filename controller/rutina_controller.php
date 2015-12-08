@@ -143,11 +143,14 @@ if ($_GET) {
 	}      
     }
    
-    
+    $usuario=$daoUsuario->getIdUsuario($_SESSION['db_user']);
     
           
         
- 
+ $usuario=$daoUsuario->getIdUsuario($_SESSION['db_user']);
+ echo $usuario[0][0];
+$rutina = $daoRutina->buscarRutinasUsuario($usuario);
+echo $rutina[0][0];
         
     
     header('Location: ../menu.php');

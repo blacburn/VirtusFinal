@@ -1,11 +1,26 @@
 <?php
 
-$numero = $_SESSION['Numero_pasajeros'];
+
 
 include 'daos/dao.php';
 include 'conf.php';
-include 'daos/daoAvion.php';
-
-$dao = new dao(DB_HOST, $_SESSION['db_user'], $_SESSION['db_pass'], DB_NAME);
+include 'daos/daoUsuario.php';
+include 'daos/daoRutina.php';
+session_start();
+$dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
 $dao->conectar();
-$daoAvion = new daoAvion($dao);
+
+
+
+
+
+
+$daoUsuario = new daoUsuario($dao);
+$daoRutina = new daoRutina($dao);
+$rutina = Array();
+$usuario=$daoUsuario->getIdUsuario($_SESSION['db_user']);
+ 
+$rutina = $daoRutina->buscarRutinasUsuario($usuario[0][0]);
+
+ 
+

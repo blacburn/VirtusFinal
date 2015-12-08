@@ -32,7 +32,7 @@ class daoUsuario {
 	}
         function getIdUsuario($nombre) {
         $sql = "SELECT id_usuario FROM usuario where nombre_login like '" . $nombre . "'";
-         echo $sql;
+         
         $result = $this->database->ejecutarConsulta($sql);
         return $this->database->transformarResultado($result);
     }
