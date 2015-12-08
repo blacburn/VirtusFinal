@@ -57,12 +57,12 @@ class daoUsuario {
             return   $res;
 	}
         
-         function buscarInfoUsuario2($usuario, $clave){
-		$sql = "SELECT * FROM usuario WHERE nombre_login='".$usuario."' AND contrasena='".$clave."'";
+         function buscarInfoUsuario2($id_usuario){
+		$sql = "SELECT * FROM usuario WHERE id_usuario=".$id_usuario."";
              
-                $res = $this->database->buscarDato($sql);
-                
-            return   $res;
+                 $result = $this->database->ejecutarConsulta($sql);
+        return $this->database->transformarResultado($result);
+          
 	}
         
         function buscarFrecUsuario($usuario, $clave){

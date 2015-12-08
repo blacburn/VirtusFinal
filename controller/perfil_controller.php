@@ -1,17 +1,26 @@
 <?php
 
-require_once('../conf.php');
-require_once('../daos/dao.php');
-require_once('../daos/daoUsuario.php');
-require_once('../daos/daoPerfil.php');
+
+
+include 'daos/dao.php';
+include 'conf.php';
+include 'daos/daoUsuario.php';
+include 'daos/daoRutina.php';
 session_start();
 $dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
 $dao->conectar();
-$daoUsuario = new daoUsuario($dao); 
-$daoPerfil = new daoPerfil($dao);
-$usuario=Array();
-$usuario=$daoUsuario->buscarInfoUsuario2($_SESSION['db_user'], $_SESSION['db_pass']);
-//$daoPerfil->mostrarPerfil($usuario);
-//    $dao->cerrarConexion();
-    
+
+
+
+
+
+
+$daoUsuario = new daoUsuario($dao);
+$daoRutina = new daoRutina($dao);
+$usuario = Array();
+$extra=$daoUsuario->getIdUsuario($_SESSION['db_user']);
+ 
+$usuario = $daoUsuario->buscarInfoUsuario2($extra[0][0]);
+
+ 
 

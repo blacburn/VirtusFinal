@@ -4,7 +4,7 @@
         <?php
         include ('./templates/importCss_1.php');
         include ('./templates/headerAdmin.php');
-//        include ('./controller/perfil_controller.php');
+        include('controller/perfil_controller.php');
         //include ('controller/perfil_controller.php');
         //include('templates/tabla.php'); 
         
@@ -13,7 +13,8 @@
     </head>
     <body> 
         <?php  
-        
+       
+       
         ?>
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
@@ -24,46 +25,47 @@
                       <form name="sentMessageddd" >   
                             <div class="col-sm-6">
                                 <div class="col-sm-6">
-                                    <label>Nombre :</label><br>
+                                    <label>Nombre :</label>
+                                    
+                                    
                                 </div>
                                 <div class="col-sm-6">
                                    
                                     <!--<input disabled="disabled" class="form-control" id="nombre_usuario" name="nombre_usuario" required=""/>-->
-                                    <?php echo '<label>adaqd</label>'     ?>
+                                    <?php echo '<label>'.$usuario[0][1].'</label> <br>'     ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
-                                    <label>Apellido</label><br>
+                                    <label>Apellido :</label>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
-                                    <input type="date" class="form-control" id="apellido_usuario" name="apellido_usuario" required=""/>
-                                    <br>
-                                </div>
-                                <div class="col-sm-6">
-                                    <label>Edad</label><br>
-                                </div>
-                                <div class="col-sm-6">
-                                    <input type="time" class="form-control"   id="edad" name="edad" required="">
+                                    <?php echo '<label>'.$usuario[0][2].'</label><br>'     ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
-                                    <label>Altura</label><br>
+                                    <label>Edad: </label><br>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
-                                    <input type="time" class="form-control"   id="altura" name="altura" required="">
+                                    <?php echo '<label>'.$usuario[0][8].'</label>'     ?>
+                                </div>
+                                <div class="col-sm-6">
+                                    <br>
+                                    <label>Altura:</label><br>
+                                </div>
+                                <div class="col-sm-6">
+                                    <br>
+                                    <?php echo '<label>'.$usuario[0][10].'</label>'     ?>
                                 </div>
                                 </div>
 
                             <div class="col-sm-6 ">
                                 <div class="col-sm-6">
-                                    <br>
                                     <label>Peso</label><br>
                                 </div>
                                 <div class="col-sm-6">
-                                    <br>
-                                    <input type="time" class="form-control"   id="peso" name="peso" required="">
+                                    <?php echo '<label>'.$usuario[0][11].'</label>'     ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
@@ -71,7 +73,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
-                                    <input type="time" class="form-control"   id="imc" name="imc" required="">
+                                    <?php echo '<label>'.$usuario[0][12].'</label>'     ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
@@ -79,7 +81,7 @@
                                 </div>
                                 <div class="col-sm-6">
                                     <br>
-                                    <input type="time" class="form-control"   id="frec_actividad" name="frec_actividad" required="">
+                                    <?php echo '<label>'.$usuario[0][13].'</label>'     ?>
                                 </div>
                             </div>
                         </form>
@@ -96,8 +98,8 @@
                         <div class="panel-body">
 
                             <div class="progress">
-                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-                                    50%
+                                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:<?php echo ''.$usuario[0][7].'%';    ?>">
+                                    <?php echo ''.$usuario[0][7].'%';    ?>
                                 </div>
 
 
