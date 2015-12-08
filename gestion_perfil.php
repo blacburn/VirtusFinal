@@ -3,30 +3,17 @@
     <head>
         <?php
         include ('./templates/importCss_1.php');
-        include('templates/headerAdmin.php');
-        
+        include ('./templates/headerAdmin.php');
+//        include ('./controller/perfil_controller.php');
         //include ('controller/perfil_controller.php');
         //include('templates/tabla.php'); 
         
         ?>
-        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-        <style type="text/css">
-            html { height: 100% }
-            body { height: 100%; margin: 0; padding: 0 }
-            #map_canvas { height: 100% }
-        </style>
-        <title></title>
+        
     </head>
     <body> 
         <?php  
-        include ('./daos/daoUsuario.php');
-        require_once('./conf.php');
-        require_once('./daos/dao.php');
-        $dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
-        $dao->conectar();
-        $usuario = new daoUsuario($dao);
         
-        $usu=$usuario->buscarInfoUsuario($_GET['db_user'],$_GET['db_pass']);
         ?>
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
@@ -34,7 +21,7 @@
                 <div class="panel-heading"><h2>Mi Perfil</h2></div>
                 <div class="panel panel-warning" >
                     <div class="panel-body">
-                      <form name="sentMessageddd" action="controller/perfil_controller.php">   
+                      <form name="sentMessageddd" >   
                             <div class="col-sm-6">
                                 <div class="col-sm-6">
                                     <label>Nombre :</label><br>
@@ -42,7 +29,7 @@
                                 <div class="col-sm-6">
                                    
                                     <!--<input disabled="disabled" class="form-control" id="nombre_usuario" name="nombre_usuario" required=""/>-->
-                                    <?php echo '<label>'.$usu.'</label>'     ?>
+                                    <?php echo '<label>adaqd</label>'     ?>
                                 </div>
                                 <div class="col-sm-6">
                                     <br>

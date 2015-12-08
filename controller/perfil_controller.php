@@ -9,8 +9,9 @@ $dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
 $dao->conectar();
 $daoUsuario = new daoUsuario($dao); 
 $daoPerfil = new daoPerfil($dao);
-$usuario=$daoUsuario->buscarInfoUsuario($_SESSION['db_user'], $_SESSION['db_pass']);
-$daoPerfil->mostrarPerfil($usuario);
-    $dao->cerrarConexion();
+$usuario=Array();
+$usuario=$daoUsuario->buscarInfoUsuario2($_SESSION['db_user'], $_SESSION['db_pass']);
+//$daoPerfil->mostrarPerfil($usuario);
+//    $dao->cerrarConexion();
     
 
