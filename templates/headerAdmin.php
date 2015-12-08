@@ -3,10 +3,10 @@
         <!--Brand and toggle get grouped for better mobile display -->
         <div class = "navbar-default">
             
-            <a class="navbar-brand page-scroll" href="index.php">
+            <a class="navbar-brand page-scroll" href="menu.php">
                  <img style="max-width:50px; margin-top: -15px; margin-left: -7%;" src="img/logo.png">
             </a>
-            <a class="navbar-brand page-scroll" href="homeAdmin.php">
+            <a class="navbar-brand page-scroll" href="menu.php">
                 Inicio
             </a>
 
@@ -19,7 +19,7 @@
                             PERFIL<span class = "caret"></span>
                         </a>
                         <ul class = 'dropdown-menu' role = menu>
-                            <li><a href = 'gestion_vuelo.php'>Perfil</a></li>
+                            <li><a href = 'gestion_perfil.php'>Mi Perfil</a></li>
                         </ul>
                     </li>
                     

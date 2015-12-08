@@ -6,6 +6,7 @@ require_once('../conf.php');
 require_once('../daos/dao.php');
 require_once('../daos/daoUsuario.php');
 require_once('../daos/daoRutina.php');
+require_once('../daos/daoGifs.php');
 
 session_start();
 if ($_GET) {
@@ -13,6 +14,7 @@ if ($_GET) {
     $dao->conectar();
     $daoRutina = new daoRutina($dao);
     $daoUsuario = new daoUsuario($dao);
+    $daoGif = new daoGifs($dao);
     $rutinas = Array();
     $tipos = Array();
     
@@ -43,7 +45,8 @@ if ($_GET) {
     if((floatval($usuario->imc))>24.9){
         $series=3;
     }
-   
+    
+     
     
     //TIPO DE EJERCICIOS ESCOGIDOS POR EL USUARIO
     if (isset($_GET['brazo']) && $_GET['brazo']){
@@ -152,8 +155,8 @@ if ($_GET) {
 $rutina = $daoRutina->buscarRutinasUsuario($usuario);
 echo $rutina[0][0];
         
-    
-    header('Location: ../menu.php');
+//    
+//    header('Location: ../menu.php');
 }
     
 //    $dao->cerrarConexion();
