@@ -19,7 +19,7 @@
                             PERFIL<span class = "caret"></span>
                         </a>
                         <ul class = 'dropdown-menu' role = menu>
-                            <li><a href = 'gestion_vuelo.php'>Vuelos</a></li>
+                            <li><a href = 'gestion_vuelo.php'>Perfil</a></li>
                         </ul>
                     </li>
                     

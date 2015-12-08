@@ -55,6 +55,7 @@ Class dao {
         //echo ("<br>sql:".$sql);
         $result = pg_query($this->link, $sql);
         return $result;
+        
     }
     
     function buscarDato($sql) {

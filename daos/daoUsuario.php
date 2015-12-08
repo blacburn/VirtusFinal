@@ -57,6 +57,14 @@ class daoUsuario {
             return   $res;
 	}
         
+        function buscarFrecUsuario($usuario, $clave){
+		$sql = "SELECT * FROM usuario WHERE nombre_login='".$usuario."' AND contrasena='".$clave."'";
+             
+                $res = $this->database->buscarDato($sql);
+                
+            return   $res;
+	}
+        
         
     function validar($usuario) {
         $sql = "SELECT contrasena FROM usuario where nombre_login like'" . $usuario . "'";
