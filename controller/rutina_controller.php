@@ -153,7 +153,7 @@ if ($_GET) {
     header('Location: ../menu.php');
 }
     
-    $dao->cerrarConexion();
+//    $dao->cerrarConexion();
 //    header('Location: ../menu.php');
 //    $_SESSION['db_user'] = $_GET['email'];
 //    $_SESSION['db_pass'] = $_GET['pass'];
