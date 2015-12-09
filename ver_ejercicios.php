@@ -1,30 +1,40 @@
-<?php ?>
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
         <?php
-        include ('./templates/importCss_1.php');
+        include ('./templates/importCss_2.php');
         include('templates/headerAdmin.php');
         include ('./daos/daoRutina.php');
+        include './templates/importJS.php';
+        require_once('./conf.php');
+        require_once('./daos/dao.php');
         ?>
+        <meta charset="UTF-8">
         <title>Ver ejercicios</title>
         
-<!--        <link rel="stylesheet" href="./css/jquery.dataTables.css" type="text/css"> -->
-        <link rel="stylesheet" href="./css/jquery-ui.css" type="text/css"> 
-        <link rel="stylesheet" href="./css/jquery.dataTables.css" type="text/css"> 
+<!--         <link href="css/bootstrap.min.css" rel="stylesheet">-->
+        <!--<link rel="stylesheet" href="css/style.css" type="text/css">--> 
+        <link rel="stylesheet" href="css/jquery.dataTables.css" type="text/css"> 
+        <link rel="stylesheet" href="css/jquery-ui.css" type="text/css"> 
+        <link rel="stylesheet" href="css/jquery.dataTables.css" type="text/css"> 
         
-        <script src="./js/jquery.js"></script> 
-        <script src="./js/jquery.dataTables.js"></script> 
-        <script src="./js/jquery.dataTables.min.js"></script> 
-        
-         <script language="javascript" type="text/javascript" >
+        <script src="js/jquery.js"></script> 
+        <script src="js/jquery.dataTables.js"></script> 
+        <script src="js/jquery.dataTables.min.js"></script> 
+        <script language="javascript" type="text/javascript" >
     
 
-$(document).ready(function() {
+                $(document).ready(function() {
     // Setup - add a text input to each footer cell
     $('#reporte tfoot th').each( function () {
         var title = $(this).text();
         
-        $(this).html( '<input type="text" placeholder="'+title+'" size="2"/>' );
+        $(this).html( '<input type="text" placeholder="'+title+'" size="15"/>' );
     } );
  
     // DataTable
@@ -45,7 +55,7 @@ $(document).ready(function() {
 		"sLast":     "Ãšltimo",
 		"sNext":     "Siguiente",
 		"sPrevious": "Anterior"
-	},
+	}
     }
     });
     
@@ -69,14 +79,14 @@ $(document).ready(function() {
         } );
     } );
 } );
-    </script>
+        </script>
+         
     </head>
     <body>  
+        
         <div class="col-sm-10">
            <?php
-        include './templates/importJS.php';
-        require_once('./conf.php');
-        require_once('./daos/dao.php');
+        
         $dao = new dao(DB_HOST,DB_USER_CREATOR, DB_PASSWORD_CREATOR, DB_NAME);
         $dao->conectar();
         $rutina = new daoRutina($dao);  
@@ -89,13 +99,14 @@ $(document).ready(function() {
             
             
             echo '<table id="reporte" class="display" cellspacing="0" width="100%"> '
-                 . '<thead  style="display: table-row-group"><tr><th>'."TIPO EJERCICIO".'</th><th>'."NOMBRE EJERCICIO".'</th> <th>'."NIVEL".'</th> <th>'."DESCRIPCION".'</th> </tr></thead>
-                    <tfoot>
+                 . '<thead style="display: table-row-group"><tr><th>'."TIPO EJERCICIO".'</th><th>'."NOMBRE EJERCICIO".'</th> <th>'."NIVEL".'</th> <th>'."DESCRIPCION".'</th> <th>'."AGREGAR".'</th> </tr></thead>
+                        <tfoot  style="display: table-header-group">
             <tr>
-                <th>tipo ejer</th>
+                <th>tipo ejercicio</th>
                 <th>nombre ejercicio</th>
                 <th>nivel</th>
                 <th>descripcion</th>
+                <th>agregar</th>
             </tr>
         </tfoot>    
                     <tbody>';
@@ -107,7 +118,7 @@ $(document).ready(function() {
                             
                             echo '<tr><td>'.$arreglo2[0][1]. ' </td> <td>'.$valor[2].
                                     '  </td> <td>'.$valor[3].'  </td> <td>'.$valor[4].
-                                    '  </td> </tr>';
+                                    '  </td> <td><button type="submit">Agregar</button>  </td> </tr>';
                             $i+=1;
                             
                         }
@@ -130,7 +141,7 @@ $(document).ready(function() {
         
         </div>
         
-        ?>
+        
             
         </div>
 

@@ -3,7 +3,7 @@
     <head>
         <?php
         include ('./templates/importCss_1.php');
-        include ('./templates/headerAdmin.php');
+        include ('/templates/headerAdmin.php');
         include('controller/perfil_controller.php');
         //include ('controller/perfil_controller.php');
         //include('templates/tabla.php'); 
@@ -14,7 +14,7 @@
     <body> 
         <?php  
        
-       
+       include './templates/importJS.php';
         ?>
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
