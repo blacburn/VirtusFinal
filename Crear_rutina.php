@@ -8,6 +8,8 @@
 //        include('templates/tabla.php');
         ?>
     </head>
+    
+    
     <body style= 'margin-top: - 20px'>  
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">              
  <div class="container">

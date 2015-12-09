@@ -168,10 +168,14 @@
             <ol class="carousel-indicators">
                 
                 
-                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <?php
-                    for ($i = 1; $i < count($rutina); $i++) {
+                    for ($i = 0; $i < count($rutina); $i++) {
+                        
+                         if ($rutina[$i][6]=='NO'){
+                        
                         echo "<li data-target='#myCarousel'" . "data-slide-to=" . $i . "></li>";
+                         }
                     }
                     ?>
                 
@@ -182,11 +186,13 @@
             <div class="carousel-inner" role="listbox">
          <?php
                     for ($i = 0; $i < count($rutina); $i++) {
-              
+                        
+              if ($rutina[$i][6]=='NO'){
+                  
                         $nombre = $rutina[$i][2];
                          $imagen=buscarGif($nombre);
                         $descripcion = $rutina[$i][3];
-                        $series = $rutina[$i][4];
+                        $repeticiones = $rutina[$i][4];
                         $tiempo = $rutina[$i][5];
                         $id_ejercicio=$rutina[$i][0];
                         $id_sesion=$rutina[$i][1];
@@ -223,15 +229,27 @@
                         echo $descripcion;
                         echo"</h4>";
                         echo "</br>";
+                        
+                        echo "<div class='item'>";
+                            echo"<h4>";
+                            echo "repeticiones";
+                            echo"</h4>";
+                        echo"</div>";    
+                        echo"<h4>";
+                        echo $repeticiones;
+                        echo"</h4>";
+                        echo "</br>";
+                        
                         echo "<div class='item'>";
                             echo"<h4>";
                             echo "series";
                             echo"</h4>";
                         echo"</div>";    
                         echo"<h4>";
-                        echo $series;
+                        echo $id_sesion;
                         echo"</h4>";
                         echo "</br>";
+                        
                         echo "<div class='item'>";
                             echo"<h4>";
                             echo "tiempo";
@@ -246,12 +264,13 @@
                         echo "</br>";
                         echo "<div class='item'>";
                          echo"<h4>";
-                            $link= "comenzar_ejercicio.php?idE=".$rutina[$i][0]."&idS=".$id_sesion=$rutina[$i][1];
-                        echo"<a href=".$link.">Realizar</a>";   
+                            $link= "comenzar_ejercicio.php?idE=".$rutina[$i][0]."&idS=".$id_sesion."&nombre=".$nombre."&imagen=".$imagen."&descripcion="."$descripcion"."&duracion=".$tiempo;
+                      $cadenas = str_replace(" ","%20",$link);
+                            echo"<a href=".$cadenas.">Realizar</a>";   
                           echo"</h4>";
                         echo"</div>";    
                         
-                    
+                      
                        
                         
                         
@@ -263,6 +282,12 @@
 
                         echo "</div>";
                         echo "</div>";
+                       
+                    }
+                    else {
+                        
+                        
+                    }
                     }
                     ?>   
                 
